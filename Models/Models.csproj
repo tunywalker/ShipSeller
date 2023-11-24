@@ -10,10 +10,4 @@
     <ProjectReference Include="..\Core.Persistence\Core.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Dtos\ResponseDto\OwnerResponses\" />
-    <Folder Include="Dtos\ResponseDto\ShipResponses\" />
-    <Folder Include="Dtos\ResponseDto\EmployeeResponses\" />
-  </ItemGroup>
-
 </Project>

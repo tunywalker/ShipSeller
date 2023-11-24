@@ -16,7 +16,7 @@ public class Ship:Entity<int>
     public Company AuthorCompany { get; set; }
 
     
-    public ShipColor Colors { get; set; }
+    public ShipColor ShipColor { get; set; }
 
 }
 

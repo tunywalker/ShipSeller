@@ -10,7 +10,7 @@ namespace Models.Dtos.ResponseDto.CompanyResponses;
 public record CompanyResponseDto(int companyId, string companyName, int companyOwnerId, List<Employee> companyEmployees)
 {
 
-    public static CompanyResponseDto ConvertToResponse(Company company)
+    public static implicit operator CompanyResponseDto(Company company)
     {
         return new CompanyResponseDto(
             companyId: company.Id,
@@ -18,7 +18,7 @@ public record CompanyResponseDto(int companyId, string companyName, int companyO
             companyOwnerId:company.OwnerId,
             companyEmployees:company.Employees
 
-
+            
             );
     }
 }

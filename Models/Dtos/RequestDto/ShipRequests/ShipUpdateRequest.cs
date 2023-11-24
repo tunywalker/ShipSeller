@@ -17,7 +17,7 @@ public record ShipUpdateRequest(int shipId, string shipName, decimal shipLenght,
             Name = request.shipName,
             Length = request.shipLenght,
             AuthorCompanyId = request.shipAuthorCompanyId,
-            Colors = request.shipColor,
+            ShipColor = request.shipColor,
 
         };
     }
