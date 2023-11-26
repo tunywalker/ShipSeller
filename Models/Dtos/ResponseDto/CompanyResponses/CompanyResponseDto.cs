@@ -15,7 +15,7 @@ public record CompanyResponseDto(int companyId, string companyName, int companyO
         return new CompanyResponseDto(
             companyId: company.Id,
             companyName:company.Name,
-            companyOwnerId:company.OwnerId,
+            companyOwnerId:company.Id,
             companyEmployees:company.Employees
 
             

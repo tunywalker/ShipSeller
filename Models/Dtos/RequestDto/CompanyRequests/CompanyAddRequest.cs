@@ -14,7 +14,7 @@ public record class CompanyAddRequest(string companyName, int ownerId)
         return new Company
         {
             Name = request.companyName,
-            OwnerId = request.ownerId
+            Id = request.ownerId
 
         };
     }
