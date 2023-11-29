@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models.Dtos.ResponseDto.ShipResponses
 {
-    public record ShipResponseDto(int shipId, string shipName, decimal shipLength, int shipAuthorCompanyId, ShipColor shipColor)
+    public record ShipResponseDto(int shipId, string shipName, double shipLength, int shipAuthorCompanyId, ShipColor shipColor)
     {
 
         public static implicit operator ShipResponseDto(Ship ship)

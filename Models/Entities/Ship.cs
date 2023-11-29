@@ -10,7 +10,7 @@ namespace Models.Entities;
 public class Ship:Entity<int>
 {
     public string Name { get; set; }
-    public Decimal Length { get; set; }
+    public double Length { get; set; }
    
     public int AuthorCompanyId { get; set; }
     public Company AuthorCompany { get; set; }

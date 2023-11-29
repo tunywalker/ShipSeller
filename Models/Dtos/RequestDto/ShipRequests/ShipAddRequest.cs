@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Models.Dtos.RequestDto.ShipRequests;
 
-public record ShipAddRequest(string shipName, decimal shipLenght, int shipAuthorCompanyId, ShipColor shipColor)
+public record ShipAddRequest(string shipName, double shipLenght, int shipAuthorCompanyId, ShipColor shipColor)
 {
     public static Ship ConvertToEntity(ShipAddRequest request)
     {

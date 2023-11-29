@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models.Dtos.RequestDto.EmployeeRequests;
 
-public record EmployeeUpdateRequest(Guid employeeId, string employeeName, decimal employeeSalary, int CompanyId)
+public record EmployeeUpdateRequest(Guid employeeId, string employeeName, double employeeSalary, int CompanyId)
 {
     public static Employee ConvertToEntity(EmployeeUpdateRequest request)
     {

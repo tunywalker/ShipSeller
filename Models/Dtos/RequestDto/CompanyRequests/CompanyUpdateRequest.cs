@@ -15,7 +15,7 @@ namespace Models.Dtos.RequestDto.CompanyRequests
             {
                 Id = request.Id,
                 Name = request.companyName,
-                Id = request.ownerId
+                
 
             };
         }

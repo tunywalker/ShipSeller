@@ -10,7 +10,7 @@ namespace Models.Entities;
 public  class Employee:Entity<Guid>
 {
     public string Name { get; set; }
-    public decimal Salary { get; set; }
+    public double Salary { get; set; }
     public Company Company { get; set; }
     public int CompanyId { get; set; }
 

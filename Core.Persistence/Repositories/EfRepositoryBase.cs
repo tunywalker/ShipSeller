@@ -71,6 +71,6 @@ public class EfRepositoryBase<TContext, TEntity, TId> : IEntityRepository<TEntit
     }
     public IQueryable<TEntity> Query()
     {
-        throw new NotImplementedException();
+        return Context.Set<TEntity>();
     }
 }

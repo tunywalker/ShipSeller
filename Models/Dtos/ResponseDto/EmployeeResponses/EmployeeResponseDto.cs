@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models.Dtos.ResponseDto.EmployeeResponses;
 
-public record EmployeeResponseDto (Guid employeeId, string employeeName, decimal employeeSalary, int employeeCompanyId )
+public record EmployeeResponseDto (Guid employeeId, string employeeName, double employeeSalary, int employeeCompanyId )
 {
     public static implicit operator EmployeeResponseDto(Employee employee)
     {
