@@ -9,6 +9,7 @@ namespace Models.Dtos.ResponseDto.EmployeeResponses;
 
 public record EmployeeResponseDto (Guid employeeId, string employeeName, double employeeSalary, int employeeCompanyId )
 {
+
     public static implicit operator EmployeeResponseDto(Employee employee)
     {
         return new EmployeeResponseDto(

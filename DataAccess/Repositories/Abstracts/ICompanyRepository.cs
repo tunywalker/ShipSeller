@@ -12,8 +12,11 @@ namespace DataAccess.Repositories.Abstracts;
 public interface ICompanyRepository:IEntityRepository<Company, int>
 {
     //public CompanyDetailDto GetById(int id);
-    public List<CompanyDetailDto> GetAllCompanyDetails();
+   
     public List<CompanyDetailDto> GetDetailsByOwnerId(int ownerId);
     public List<CompanyDetailDto> GetDetailsByCompanyName(string companyName);
+
+    public List<CompanyDetailDto> GetAllCompanyDetails();
+
 
 }

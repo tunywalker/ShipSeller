@@ -1,4 +1,5 @@
-﻿using Core.Persistence.EntityBaseModel;
+﻿using Core.CrossCuttingConcerns.Exceptions;
+using Core.Persistence.EntityBaseModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System;
@@ -66,8 +67,9 @@ public class EfRepositoryBase<TContext, TEntity, TId> : IEntityRepository<TEntit
 
     void IEntityRepository<TEntity, TId>.Update(TEntity entity)
     {
-       Context.Set<TEntity>().Update(entity);
-       Context.SaveChanges();
+        Context.Set<TEntity>().Update(entity);
+        Context.SaveChanges();
+
     }
     public IQueryable<TEntity> Query()
     {

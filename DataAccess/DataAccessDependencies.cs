@@ -23,6 +23,8 @@ public static class DataAccessDependencies
         services.AddDbContext<BaseDbContext>(opt =>
             opt.UseSqlServer(configuration.GetConnectionString("SqlConnection"), b => b.MigrationsAssembly("WebAPI")));
 
+
+
         return services;
     }
 

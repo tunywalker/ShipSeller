@@ -17,7 +17,7 @@ namespace Models.Dtos.ResponseDto.ShipResponses
                 shipName:ship.Name,
                 shipLength:ship.Length,
                 shipColor:ship.ShipColor,
-                shipAuthorCompanyId :ship.AuthorCompanyId
+                shipAuthorCompanyId :ship.CompanyId
 
                 
                 );

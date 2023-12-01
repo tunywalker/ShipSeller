@@ -27,8 +27,9 @@ public class CompanyRepository : EfRepositoryBase<BaseDbContext, Company, int>, 
             {
                 Id = company.Id,
                 Name = company.Name,
+                OwnerId= owner.Id,
                 OwnerName = owner.Name,
-                Employees = company.Employees,
+                Employees = company.CompanyEmployees,
 
 
             }).ToList();
@@ -46,7 +47,7 @@ public class CompanyRepository : EfRepositoryBase<BaseDbContext, Company, int>, 
                 Id = company.Id,
                 Name = company.Name,
                 OwnerName = owner.Name,
-                Employees = company.Employees,
+                Employees = company.CompanyEmployees,
 
 
             }).ToList();
@@ -66,14 +67,14 @@ public class CompanyRepository : EfRepositoryBase<BaseDbContext, Company, int>, 
                 Id = company.Id,
                 Name = company.Name,
                 OwnerName = owner.Name,
-                Employees = company.Employees,
+                Employees = company.CompanyEmployees,
 
 
             }).ToList();
         return details;
 
     }
-
+    
     public CompanyDetailDto GetById(int id)
     {
 
@@ -86,10 +87,12 @@ public class CompanyRepository : EfRepositoryBase<BaseDbContext, Company, int>, 
                 Id = company.Id,
                 Name = company.Name,
                 OwnerName = owner.Name,
-                Employees = company.Employees,
+                Employees = company.CompanyEmployees,
 
 
             }).SingleOrDefault(x => x.Id == id);
         return details;
     }
+
+   
 }

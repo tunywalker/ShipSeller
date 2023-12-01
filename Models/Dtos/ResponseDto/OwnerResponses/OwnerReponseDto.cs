@@ -10,7 +10,7 @@ namespace Models.Dtos.ResponseDto.OwnerResponses;
 
 public record OwnerReponseDto(int ownerId, string ownerName, List<Company> ownerCompanies)
 {
-    public static implicit operator OwnerReponseDto(Owner owner)
+    public static OwnerReponseDto ConvertToResponse(Owner owner)
     {
         return new OwnerReponseDto(
             ownerId:owner.Id,

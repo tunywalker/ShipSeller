@@ -12,8 +12,8 @@ public class Ship:Entity<int>
     public string Name { get; set; }
     public double Length { get; set; }
    
-    public int AuthorCompanyId { get; set; }
-    public Company AuthorCompany { get; set; }
+    public int CompanyId { get; set; }
+    public Company Company { get; set; }
 
     
     public ShipColor ShipColor { get; set; }

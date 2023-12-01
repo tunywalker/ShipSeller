@@ -23,7 +23,7 @@ public class CompanyController : BaseController
         return ActionResultInstance(result);
     }
 
-    [HttpDelete]
+    [HttpDelete("delete")]
     public IActionResult Delete([FromQuery] int id)
     {
         var result = _companyService.Delete(id);
@@ -36,6 +36,26 @@ public class CompanyController : BaseController
         var result = _companyService.GetAll();
         return ActionResultInstance(result);
     }
+    [HttpGet("getalldetails")]
+    public IActionResult GetAllDetails()
+    {
+        var result = _companyService.GetAllCompanyDetails();
+        return ActionResultInstance(result);
+    }
+
+    [HttpGet("getbyid")]
+    public IActionResult GetById([FromQuery] int id)
+    {
+        var result= _companyService.GetById(id);
+        return ActionResultInstance(result);
+    }
+    [HttpPut("update")]
+    public IActionResult Update([FromBody] CompanyUpdateRequest companyUpdateRequest)
+    {
+        var result = _companyService.Update(companyUpdateRequest);
+        return ActionResultInstance(result);
+    }
+
 
 }
 

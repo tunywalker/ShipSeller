@@ -4,6 +4,7 @@ using DataAccess.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231201011058_init2")]
+    partial class init2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,16 +33,16 @@ namespace WebAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CompanyOwnerId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("OwnerId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyOwnerId");
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Companies");
 
@@ -47,32 +50,32 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            CompanyOwnerId = 1,
-                            Name = "Turkey Ship-Co"
+                            Name = "Turkey Ship-Co",
+                            OwnerId = 1
                         },
                         new
                         {
                             Id = 2,
-                            CompanyOwnerId = 1,
-                            Name = "Japan Ship-Co"
+                            Name = "Japan Ship-Co",
+                            OwnerId = 1
                         },
                         new
                         {
                             Id = 3,
-                            CompanyOwnerId = 2,
-                            Name = "Monaco Ship-Co"
+                            Name = "Monaco Ship-Co",
+                            OwnerId = 2
                         },
                         new
                         {
                             Id = 4,
-                            CompanyOwnerId = 3,
-                            Name = "Spain Ship-Co"
+                            Name = "Spain Ship-Co",
+                            OwnerId = 3
                         },
                         new
                         {
                             Id = 5,
-                            CompanyOwnerId = 3,
-                            Name = "Germany Ship-Co"
+                            Name = "Germany Ship-Co",
+                            OwnerId = 3
                         });
                 });
 
@@ -101,77 +104,77 @@ namespace WebAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6a251fa1-fd88-45c4-8d09-7277941ab148"),
+                            Id = new Guid("150dffda-3026-4502-b310-8b19c7893f82"),
                             CompanyId = 1,
                             Name = "Hakkı Usta",
                             Salary = 15000.0
                         },
                         new
                         {
-                            Id = new Guid("3afa7636-aba3-4562-92b3-a3c07a5c7411"),
+                            Id = new Guid("5af64fe6-5094-48d4-a422-ea261d72736c"),
                             CompanyId = 1,
                             Name = "Suat Usta",
                             Salary = 20000.0
                         },
                         new
                         {
-                            Id = new Guid("ea4df93b-6508-4faf-b572-7edf453efd7f"),
+                            Id = new Guid("f534024d-5f26-4786-9249-da3e8af14272"),
                             CompanyId = 1,
                             Name = "Ahmet Usta",
                             Salary = 5000.0
                         },
                         new
                         {
-                            Id = new Guid("43e7d70a-e308-4f6b-a8b7-9216bb6c7077"),
+                            Id = new Guid("7b67c7c5-001e-4ef1-9697-03c9448876c2"),
                             CompanyId = 2,
                             Name = "Hitachi Usta",
                             Salary = 25000.0
                         },
                         new
                         {
-                            Id = new Guid("7b1cd380-5cb5-4fa9-a208-a03acd8bf8d8"),
+                            Id = new Guid("97cdb7cf-363f-447b-8e51-9dc3d0a8a1eb"),
                             CompanyId = 2,
                             Name = "Makita Usta",
                             Salary = 30000.0
                         },
                         new
                         {
-                            Id = new Guid("e5b2346e-e4fc-4570-8617-adfa0c621362"),
+                            Id = new Guid("3ecb3928-6d42-4a6a-bf85-af2b9ac6ea70"),
                             CompanyId = 2,
                             Name = "Ryobi Usta",
                             Salary = 45000.0
                         },
                         new
                         {
-                            Id = new Guid("bc1982bc-838d-4006-9c11-baa7ff323282"),
+                            Id = new Guid("d446fdb6-560f-4f54-ac6e-0fce609ea568"),
                             CompanyId = 3,
                             Name = "Buffon Usta",
                             Salary = 20000.0
                         },
                         new
                         {
-                            Id = new Guid("b8f466ac-e51f-427e-abdb-cb4a4efb566e"),
+                            Id = new Guid("41793fae-baa1-479e-b1a3-7809440af4d4"),
                             CompanyId = 3,
                             Name = "Hans Usta",
                             Salary = 22000.0
                         },
                         new
                         {
-                            Id = new Guid("fa90374f-10ed-4344-a185-9d40e718f9a4"),
+                            Id = new Guid("70f6a785-073c-403e-81ae-0dd788892085"),
                             CompanyId = 3,
                             Name = "Tsubasa Usta",
                             Salary = 23232.0
                         },
                         new
                         {
-                            Id = new Guid("f12ab5fa-f8a5-4049-a674-e2fdfbf6ad15"),
+                            Id = new Guid("7c388946-875f-4a0b-9546-2451c914ac2a"),
                             CompanyId = 3,
                             Name = "Nail Usta",
                             Salary = 33000.0
                         },
                         new
                         {
-                            Id = new Guid("5b76820b-26df-46a6-987c-d908dc6040bb"),
+                            Id = new Guid("4202e56e-ed55-4a58-b05f-b15f9adc5560"),
                             CompanyId = 4,
                             Name = "Iglesias Usta",
                             Salary = 60000.0
@@ -225,7 +228,7 @@ namespace WebAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CompanyId")
+                    b.Property<int>("AuthorCompanyId")
                         .HasColumnType("int");
 
                     b.Property<double>("Length")
@@ -240,7 +243,7 @@ namespace WebAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CompanyId");
+                    b.HasIndex("AuthorCompanyId");
 
                     b.ToTable("Ships");
 
@@ -248,7 +251,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 1,
-                            CompanyId = 1,
+                            AuthorCompanyId = 1,
                             Length = 50.0,
                             Name = "Uçak Gemisi",
                             ShipColor = 5
@@ -256,7 +259,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 2,
-                            CompanyId = 1,
+                            AuthorCompanyId = 1,
                             Length = 30.0,
                             Name = "Yük Gemisi",
                             ShipColor = 4
@@ -264,7 +267,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 3,
-                            CompanyId = 1,
+                            AuthorCompanyId = 1,
                             Length = 30.0,
                             Name = "Buğday Gemisi",
                             ShipColor = 3
@@ -272,7 +275,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 4,
-                            CompanyId = 2,
+                            AuthorCompanyId = 2,
                             Length = 40.0,
                             Name = "Oil Ship",
                             ShipColor = 0
@@ -280,7 +283,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 5,
-                            CompanyId = 2,
+                            AuthorCompanyId = 2,
                             Length = 30.0,
                             Name = "Car Ship",
                             ShipColor = 1
@@ -288,7 +291,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 6,
-                            CompanyId = 2,
+                            AuthorCompanyId = 2,
                             Length = 25.0,
                             Name = "Drone Ship",
                             ShipColor = 1
@@ -296,7 +299,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 7,
-                            CompanyId = 3,
+                            AuthorCompanyId = 3,
                             Length = 10.0,
                             Name = "Fisher Boat",
                             ShipColor = 0
@@ -304,7 +307,7 @@ namespace WebAPI.Migrations
                         new
                         {
                             Id = 8,
-                            CompanyId = 3,
+                            AuthorCompanyId = 3,
                             Length = 5.0,
                             Name = "Mussell Hunter",
                             ShipColor = 5
@@ -313,17 +316,17 @@ namespace WebAPI.Migrations
 
             modelBuilder.Entity("Models.Entities.Company", b =>
                 {
-                    b.HasOne("Models.Entities.Owner", "CompanyOwner")
+                    b.HasOne("Models.Entities.Owner", "Owner")
                         .WithMany("Companies")
-                        .HasForeignKey("CompanyOwnerId");
+                        .HasForeignKey("OwnerId");
 
-                    b.Navigation("CompanyOwner");
+                    b.Navigation("Owner");
                 });
 
             modelBuilder.Entity("Models.Entities.Employee", b =>
                 {
                     b.HasOne("Models.Entities.Company", "Company")
-                        .WithMany("CompanyEmployees")
+                        .WithMany("Employees")
                         .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -333,18 +336,18 @@ namespace WebAPI.Migrations
 
             modelBuilder.Entity("Models.Entities.Ship", b =>
                 {
-                    b.HasOne("Models.Entities.Company", "Company")
+                    b.HasOne("Models.Entities.Company", "AuthorCompany")
                         .WithMany()
-                        .HasForeignKey("CompanyId")
+                        .HasForeignKey("AuthorCompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Company");
+                    b.Navigation("AuthorCompany");
                 });
 
             modelBuilder.Entity("Models.Entities.Company", b =>
                 {
-                    b.Navigation("CompanyEmployees");
+                    b.Navigation("Employees");
                 });
 
             modelBuilder.Entity("Models.Entities.Owner", b =>

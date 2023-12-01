@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20231128011252_init")]
+    [Migration("20231201010537_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -37,7 +37,7 @@ namespace WebAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OwnerId")
+                    b.Property<int?>("OwnerId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -119,9 +119,7 @@ namespace WebAPI.Migrations
                 {
                     b.HasOne("Models.Entities.Owner", "Owner")
                         .WithMany("Companies")
-                        .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OwnerId");
 
                     b.Navigation("Owner");
                 });
