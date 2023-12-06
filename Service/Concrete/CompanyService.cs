@@ -148,6 +148,37 @@ public class CompanyService : ICompanyService
         }
     }
 
+    public Response<List<CompanyDetailDto>> GetDetailsByCompanyName(string categoryName)
+    {
+
+        try
+        {
+
+            var companies = _companyRepository.GetDetailsByCompanyName(categoryName);
+
+           
+            return new Response<List<CompanyDetailDto>>()
+            {
+                Data = companies,
+                Message = $"'{companies.Count}' Adet şirket bilgisi gösteriliyor.",
+                StatusCode = System.Net.HttpStatusCode.OK
+
+
+            };
+        }
+
+        catch (BusinessException ex)
+        {
+            return new Response<List<CompanyDetailDto>>()
+            {
+
+                Message = ex.Message,
+                StatusCode = System.Net.HttpStatusCode.BadRequest
+
+            };
+        }
+    }
+
     public Response<CompanyResponseDto> Update(CompanyUpdateRequest companyUpdateRequest)
     {
         try

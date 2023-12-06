@@ -33,20 +33,21 @@ public class CompanyController : BaseController
     [HttpGet("getall")]
     public IActionResult GetAll()
     {
-        var result = _companyService.GetAll();
-        return ActionResultInstance(result);
-    }
-    [HttpGet("getalldetails")]
-    public IActionResult GetAllDetails()
-    {
         var result = _companyService.GetAllCompanyDetails();
         return ActionResultInstance(result);
     }
+   
 
     [HttpGet("getbyid")]
     public IActionResult GetById([FromQuery] int id)
     {
         var result= _companyService.GetById(id);
+        return ActionResultInstance(result);
+    }
+    [HttpGet("getbyname")]
+    public IActionResult GetByName([FromQuery]  string categoryName)
+    {
+        var result = _companyService.GetDetailsByCompanyName(categoryName);
         return ActionResultInstance(result);
     }
     [HttpPut("update")]

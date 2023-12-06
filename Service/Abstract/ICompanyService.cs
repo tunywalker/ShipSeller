@@ -17,7 +17,10 @@ public interface ICompanyService
 
     Response<CompanyResponseDto> GetById(int id);
     Response<List<CompanyResponseDto>> GetAll();
+    Response<List<CompanyDetailDto>> GetDetailsByCompanyName(string categoryName);
     Response<List<CompanyDetailDto>> GetAllCompanyDetails();
+
     
+
 
 }
