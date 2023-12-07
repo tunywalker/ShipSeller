@@ -22,14 +22,18 @@ public class OwnerRepository : EfRepositoryBase<BaseDbContext, Owner, int>, IOwn
 
     public List<OwnerDetailDto> GetAllOwnerDetails()
     {
-        var details = Context.Owners.Select(owner =>
-        new OwnerDetailDto
-        {
-            Id = owner.Id,
-            Name = owner.Name,
-            Companies = owner.Companies
+        var details = Context.Owners.Join(
+            Context.Companies,
+            o => o.Id,
+            c => c.Id,
+            (owner, company) => new OwnerDetailDto
+            {
+                Id = owner.Id,
+                Name = owner.Name,
+                Companies= owner.Companies
 
-        }).ToList();
+
+            }).ToList();
         return details;
     }
 

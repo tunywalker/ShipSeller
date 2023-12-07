@@ -24,7 +24,7 @@ public class OwnerRules : IOwnerRules
         var owner = _ownerRepository.GetById(id);
         if (owner == null && id>-1 )
         {
-            throw new BusinessException($"Id:{id} olan şirket Sahibi bulunamadı");
+            throw new BusinessException($"Id:{id} olan şirket sahibi bulunamadı");
         }
     }
 
@@ -33,7 +33,7 @@ public class OwnerRules : IOwnerRules
         var company = _ownerRepository.GetByFilter(x => x.Name == ownerName);
         if (company != null)
         {
-            throw new BusinessException("Şirket ismi benzersiz olmalı.");
+            throw new BusinessException("Şirket sahibi ismi benzersiz olmalı.");
         }
     }
 }

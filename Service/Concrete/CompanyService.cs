@@ -96,7 +96,7 @@ public class CompanyService : ICompanyService
     {
 
         var companies = _companyRepository.GetAll();
-        var response = companies.Select(x => CompanyResponseDto.ConvertToResponse(x)).ToList(); ;
+        var response = companies.Select(x => CompanyResponseDto.ConvertToResponse(x)).ToList(); 
         return new Response<List<CompanyResponseDto>>()
         {
             Message = $"{response.Count()} adet şirket gösteriliyor. ",

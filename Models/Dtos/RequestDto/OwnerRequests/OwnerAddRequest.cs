@@ -14,6 +14,7 @@ public record OwnerAddRequest(string ownerName)
         return new Owner
         {
             Name = request.ownerName,
+
         };
     }
 }

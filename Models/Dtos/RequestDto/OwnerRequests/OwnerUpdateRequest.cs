@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models.Dtos.RequestDto.OwnerRequests;
 
-public record OwnerUpdateRequest(int ownerId, string ownerName, List<Company> Companies)
+public record OwnerUpdateRequest(int ownerId, string ownerName)
 {
     public static Owner ConvertToEntity(OwnerUpdateRequest request)
     {
@@ -15,7 +15,7 @@ public record OwnerUpdateRequest(int ownerId, string ownerName, List<Company> Co
         {
             Id=request.ownerId,
             Name = request.ownerName,
-            Companies = request.Companies
+            
         };
     }
 }
