@@ -17,9 +17,11 @@ public static class ServiceDependencies
     public static IServiceCollection AddServiceDependencies(this IServiceCollection services)
     {
         services.AddScoped<ICompanyService,CompanyService>();
+        services.AddScoped<IEmployeeService, EmployeeService>();
         services.AddScoped<IOwnerService, OwnerService>();
         services.AddScoped<IOwnerRules,OwnerRules>();
         services.AddScoped<ICompanyRules, CompanyRules>();
+        services.AddScoped<IEmployeeRules, EmployeeRules>();
         services.AddScoped<IBusinessRuleManager, BusinessRuleManager>();
 
         return services;

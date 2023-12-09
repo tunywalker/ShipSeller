@@ -10,4 +10,6 @@ public  interface IBusinessRuleManager
 {
     IOwnerRules OwnerRules { get; }
     ICompanyRules CompanyRules { get; }
+
+    IEmployeeRules EmployeeRules { get; }
 }

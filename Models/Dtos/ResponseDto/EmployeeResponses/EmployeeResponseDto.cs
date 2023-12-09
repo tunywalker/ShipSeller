@@ -20,5 +20,9 @@ public record EmployeeResponseDto (Guid employeeId, string employeeName, double 
 
             );
     }
+    public static EmployeeResponseDto convertToResponse(Employee employee)
+    {
+        return new EmployeeResponseDto(employee);
+    }
 
 }
