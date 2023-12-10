@@ -18,10 +18,13 @@ public static class ServiceDependencies
     {
         services.AddScoped<ICompanyService,CompanyService>();
         services.AddScoped<IEmployeeService, EmployeeService>();
+        services.AddScoped<IShipService, ShipService>();
         services.AddScoped<IOwnerService, OwnerService>();
+
         services.AddScoped<IOwnerRules,OwnerRules>();
         services.AddScoped<ICompanyRules, CompanyRules>();
         services.AddScoped<IEmployeeRules, EmployeeRules>();
+        services.AddScoped<IShipRules, ShipRules>();
         services.AddScoped<IBusinessRuleManager, BusinessRuleManager>();
 
         return services;

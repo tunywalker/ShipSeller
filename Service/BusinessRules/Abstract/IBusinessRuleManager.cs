@@ -12,4 +12,6 @@ public  interface IBusinessRuleManager
     ICompanyRules CompanyRules { get; }
 
     IEmployeeRules EmployeeRules { get; }
+
+    IShipRules ShipRules { get; }
 }

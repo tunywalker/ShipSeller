@@ -22,5 +22,9 @@ namespace Models.Dtos.ResponseDto.ShipResponses
                 
                 );
         }
+        public static ShipResponseDto ConvertToResponse(Ship ship)
+        {
+            return new ShipResponseDto(ship);
+        }
     }
 }
